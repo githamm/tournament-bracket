@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Denver Post Bracket Builder</title>
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.js'></script>
+    <link rel="stylesheet" type="text/css" href="sports-bracket.css">
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
+    <script type='text/javascript' src="https://chriszarate.github.io/sheetrock/dist/sheetrock.min.js"></script>
+    <script type='text/javascript'>
+       $(window).load(function() {
+            
+            // Define spreadsheet URL
+            var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=0';
+
+            // Compile the Handlebars template
+            var BracketTemplate = Handlebars.compile($('#bracket-template').html());
+
+            // Load data
+            $('#bracket').sheetrock({
+                url: mySpreadsheet,
+                rowTemplate: BracketTemplate
+            });
+
+            var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=1532656728';
+
+            var BracketTemplate2 = Handlebars.compile($('#bracket-template2').html());
+
+           $('#bracket-2').sheetrock({
+                url: mySpreadsheet2,
+                rowTemplate: BracketTemplate2
+            });
+
+            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=1799430249';
+
+            var BracketTemplate3 = Handlebars.compile($('#bracket-template3').html());
+
+            $('#bracket-3').sheetrock({
+                url: mySpreadsheet3,
+                rowTemplate: BracketTemplate3
+            });
+
+            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=1963962782';
+
+            var BracketTemplate4 = Handlebars.compile($('#bracket-template4').html());
+
+            $('#bracket-4').sheetrock({
+                url: mySpreadsheet4,
+                rowTemplate: BracketTemplate4
+            });
+
+            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=657120383';
+
+            var BracketTemplate5 = Handlebars.compile($('#bracket-template5').html());
+
+            $('#bracket-5').sheetrock({
+                url: mySpreadsheet5,
+                rowTemplate: BracketTemplate5
+            });
+
+            var mySpreadsheet6 = 'https://docs.google.com/spreadsheets/d/1B7IPuSXVrYJPvNmBr2noBG_McCJULDJe_fdfNZTXoeY/edit#gid=326601853';
+
+            var BracketTemplate6 = Handlebars.compile($('#bracket-template6').html());
+
+            $('#bracket-6').sheetrock({
+                url: mySpreadsheet6,
+                rowTemplate: BracketTemplate6
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <main id="tournament">
+        <ul id="bracket" class="round round-1">
+            <script id="bracket-template" type="text/x-handlebars-template">
+                <li class="spacer">&nbsp;</li>
+                <li class="game game-top">{{cells.firsttop}}<span></span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom">{{cells.firstbottom}}<span></span></li>
+                <li class="spacer">&nbsp;</li>
+                </script>
+        </ul>
+        <ul id="bracket-2" class="round round-2">
+        <script id="bracket-template2" type="text/x-handlebars-template">
+            <li class="spacer">&nbsp;</li>
+            <li class="game game-top">{{cells.secondtop}}<span></span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom">{{cells.secondbottom}}<span></span></li>
+            <li class="spacer">&nbsp;</li>
+            </script>
+        </ul>
+        <ul id="bracket-3" class="round round-3">
+        <script id="bracket-template3" type="text/x-handlebars-template">
+            <li class="spacer">&nbsp;</li>
+            <li class="game game-top">{{cells.thirdtop}}<span></span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom">{{cells.thirdbottom}}<span></span></li>
+            <li class="spacer">&nbsp;</li>
+            </script>
+        </ul>
+        <ul id="bracket-4" class="round round-4">
+        <script id="bracket-template4" type="text/x-handlebars-template">
+            <li class="spacer">&nbsp;</li>
+            <li class="game game-top">{{cells.fourthtop}}<span></span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom">{{cells.fourthbottom}}<span></span></li>
+            <li class="spacer">&nbsp;</li>
+            </script>
+        </ul>
+        <ul id="bracket-5" class="round round-5">
+        <script id="bracket-template5" type="text/x-handlebars-template">
+            <li class="spacer">&nbsp;</li>
+            <li class="game game-top">{{cells.fifthtop}}<span></span></li>
+            <li class="game game-spacer">&nbsp;</li>
+            <li class="game game-bottom">{{cells.fifthbottom}}<span></span></li>
+            <li class="spacer">&nbsp;</li>
+            </script>
+        </ul>
+        <ul id="bracket-6" class="round round-6">
+        <script id="bracket-template6" type="text/x-handlebars-template">
+            <li class="game game-top">{{cells.winner}}<span></span></li>
+            </script>
+        </ul>
+    </main>
+</body>
+</html>
