@@ -69,7 +69,7 @@
             border-bottom: 1px solid #aaa!important;
         }
         
-        li.game span {
+        span.score {
             float: right;
             margin-right: 5px;
         }
@@ -81,6 +81,10 @@
         li.game-spacer {
             border-right: 1px solid #aaa!important;
             min-height: 25px!important;
+            font-size: 10px;
+            text-align: center;
+            font-style: italic;
+            padding: 6px 5px 0 0;
         }
         
         li.game-bottom {
@@ -90,4 +94,11 @@
         li.round-info {
             text-align: center;
             font-weight: bold;
+        }
+
+        ul li a {
+            text-decoration: none;
+        }
+
+        span.seed {
         }
