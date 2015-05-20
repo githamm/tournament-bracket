@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Denver Post Bracket Builder</title>
-    <script type='text/javascript' src='//code.jquery.com/jquery-1.11.0.js'></script>
+    <title>Girls Soccer 2A Tournament Bracket</title>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
     <link rel="stylesheet" type="text/css" href="sports-bracket.css">
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
     <script type='text/javascript' src="https://chriszarate.github.io/sheetrock/dist/sheetrock.min.js"></script>
     <script type='text/javascript'>
-       $(window).load(function() {
-            
+        $(window).load(function() {
+
             // Define spreadsheet URL
-            var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/14VFtrF9Vv8Ic9eAbwB09PtReit_uZCTkHB6qelZDxTs/edit#gid=0';
+            var mySpreadsheet1 = 'https://docs.google.com/spreadsheets/d/1yunUSHV1kqV8YI9IFt3saID1JtFyMSzOIRZfvucB9Ug/edit#gid=0';
 
             // Compile the Handlebars template
-            var BracketTemplate = Handlebars.compile($('#bracket-template').html());
+            var BracketTemplate1 = Handlebars.compile($('#bracket-template1').html());
 
             // Load data
-            $('#bracket').sheetrock({
-                url: mySpreadsheet,
-                rowTemplate: BracketTemplate
+            $('#bracket-1').sheetrock({
+                url: mySpreadsheet1,
+                query: "select A,B,C,D,E,F,G,H,I",
+                rowTemplate: BracketTemplate1
             });
 
-            var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/14VFtrF9Vv8Ic9eAbwB09PtReit_uZCTkHB6qelZDxTs/edit#gid=783789131';
+            var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/1yunUSHV1kqV8YI9IFt3saID1JtFyMSzOIRZfvucB9Ug/edit#gid=894748319';
 
             var BracketTemplate2 = Handlebars.compile($('#bracket-template2').html());
 
-           $('#bracket-2').sheetrock({
+            $('#bracket-2').sheetrock({
                 url: mySpreadsheet2,
+                query: "select A,B,C,D,E,F,G,H,I",
                 rowTemplate: BracketTemplate2
             });
 
-            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/14VFtrF9Vv8Ic9eAbwB09PtReit_uZCTkHB6qelZDxTs/edit#gid=1562734885';
+            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/1yunUSHV1kqV8YI9IFt3saID1JtFyMSzOIRZfvucB9Ug/edit#gid=641489088';
 
             var BracketTemplate3 = Handlebars.compile($('#bracket-template3').html());
 
             $('#bracket-3').sheetrock({
                 url: mySpreadsheet3,
+                query: "select A,B,C,D,E,F,G,H,I",
                 rowTemplate: BracketTemplate3
             });
 
-            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/14VFtrF9Vv8Ic9eAbwB09PtReit_uZCTkHB6qelZDxTs/edit#gid=817899974';
+            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/1yunUSHV1kqV8YI9IFt3saID1JtFyMSzOIRZfvucB9Ug/edit#gid=1685345994';
 
             var BracketTemplate4 = Handlebars.compile($('#bracket-template4').html());
 
             $('#bracket-4').sheetrock({
                 url: mySpreadsheet4,
+                query: "select A,B,C,D,E,F,G,H,I",
                 rowTemplate: BracketTemplate4
             });
 
-            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/14VFtrF9Vv8Ic9eAbwB09PtReit_uZCTkHB6qelZDxTs/edit#gid=203444850';
+            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/1yunUSHV1kqV8YI9IFt3saID1JtFyMSzOIRZfvucB9Ug/edit#gid=1818032978';
 
             var BracketTemplate5 = Handlebars.compile($('#bracket-template5').html());
 
             $('#bracket-5').sheetrock({
                 url: mySpreadsheet5,
+                query: "select A",
                 rowTemplate: BracketTemplate5
             });
         });
@@ -63,52 +69,57 @@
 
 <body>
     <main id="tournament">
-        <ul id="bracket" class="round round-1">
-        <li class="round-info">Round 1<br>May 5</li>
-            <script id="bracket-template" type="text/x-handlebars-template">                
+        <ul id="bracket-1" class="round round-1">
+            <li class="round-info">Round 1
+                <br>May 5</li>
+            <script id="bracket-template1" type="text/x-handlebars-template">
                 <li class="spacer">&nbsp;</li>
-                <li class="game game-top">{{cells.round1top}}<span></span></li>
-                <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom">{{cells.round1bottom}}<span></span></li>
+                <li class="game game-top"><span class="seed">{{cells.round16topseed}}</span>&nbsp;{{#if cells.round16topurl}} <a href="{{cells.round16topurl}}" target="_top">{{cells.round16topschool}}</a> {{else}} {{cells.round16topschool}} {{/if}} <span class="score">{{cells.round16topscore}}</span></li>
+                <li class="game game-spacer">{{cells.round16info}}</li>
+                <li class="game game-bottom"><span class="seed">{{cells.round16bottomseed}}</span>&nbsp;{{#if cells.round16bottomurl}} <a href="{{cells.round16bottomurl}}" target="_top">{{cells.round16bottomschool}}</a> {{else}} {{cells.round16bottomschool}} {{/if}} <span class="score">{{cells.round16bottomscore}}</span></li>
                 <li class="spacer">&nbsp;</li>
-                </script>
+            </script>
         </ul>
         <ul id="bracket-2" class="round round-2">
-        <li class="round-info">Quarterfinals<br>May 8</li>
-        <script id="bracket-template2" type="text/x-handlebars-template">
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top">{{cells.quarterstop}}<span></span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom">{{cells.quartersbottom}}<span></span></li>
-            <li class="spacer">&nbsp;</li>
+            <li class="round-info">Quarterfinals
+                <br>May 8</li>
+            <script id="bracket-template2" type="text/x-handlebars-template">
+                <li class="spacer">&nbsp;</li>
+                <li class="game game-top"><span class="seed">{{cells.quarterstopseed}}</span>&nbsp;{{#if cells.quarterstopurl}} <a href="{{cells.quarterstopurl}}" target="_top">{{cells.quarterstopschool}}</a> {{else}} {{cells.quarterstopschool}} {{/if}} <span class="score">{{cells.quarterstopscore}}</span></li>
+                <li class="game game-spacer">{{cells.quartersinfo}}</li>
+                <li class="game game-bottom"><span class="seed">{{cells.quartersbottomseed}}</span>&nbsp;{{#if cells.quartersbottomurl}} <a href="{{cells.quartersbottomurl}}" target="_top">{{cells.quartersbottomschool}}</a> {{else}} {{cells.quartersbottomschool}} {{/if}} <span class="score">{{cells.quartersbottomscore}}</span></li>
+                <li class="spacer">&nbsp;</li>
             </script>
         </ul>
         <ul id="bracket-3" class="round round-3">
-        <li class="round-info">Semifinals<br>May 13</li>
-        <script id="bracket-template3" type="text/x-handlebars-template">
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top">{{cells.semistop}}<span></span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom">{{cells.semisbottom}}<span></span></li>
-            <li class="spacer">&nbsp;</li>
+            <li class="round-info">Semifinals
+                <br>May 13</li>
+            <script id="bracket-template3" type="text/x-handlebars-template">
+                <li class="spacer">&nbsp;</li>
+                <li class="game game-top"><span class="seed">{{cells.semistopseed}}</span>&nbsp;{{#if cells.semistopurl}} <a href="{{cells.semistopurl}}" target="_top">{{cells.semistopschool}}</a> {{else}} {{cells.semistopschool}} {{/if}} <span class="score">{{cells.semistopscore}}</span></li>
+                <li class="game game-spacer">{{cells.semisinfo}}</li>
+                <li class="game game-bottom"><span class="seed">{{cells.semisbottomseed}}</span>&nbsp;{{#if cells.semisbottomurl}} <a href="{{cells.semisbottomurl}}" target="_top">{{cells.semisbottomschool}}</a> {{else}} {{cells.semisbottomschool}} {{/if}} <span class="score">{{cells.semisbottomscore}}</span></li>
+                <li class="spacer">&nbsp;</li>
             </script>
         </ul>
         <ul id="bracket-4" class="round round-4">
-        <li class="round-info">Finals<br>May 19</li>
-        <script id="bracket-template4" type="text/x-handlebars-template">
-            <li class="spacer">&nbsp;</li>
-            <li class="game game-top">{{cells.finalstop}}<span></span></li>
-            <li class="game game-spacer">&nbsp;</li>
-            <li class="game game-bottom">{{cells.finalsbottom}}<span></span></li>
-            <li class="spacer">&nbsp;</li>
+            <li class="round-info">Finals
+                <br>May 19</li>
+            <script id="bracket-template4" type="text/x-handlebars-template">
+                <li class="spacer">&nbsp;</li>
+                <li class="game game-top"><span class="seed">{{cells.finalstopseed}}</span>&nbsp;{{#if cells.finalstopurl}} <a href="{{cells.finalstopurl}}" target="_top">{{cells.finalstopschool}}</a> {{else}} {{cells.finalstopschool}} {{/if}} <span class="score">{{cells.finalstopscore}}</span></li>
+                <li class="game game-spacer">{{cells.finalsinfo}}</li>
+                <li class="game game-bottom"><span class="seed">{{cells.finalsbottomseed}}</span>&nbsp;{{#if cells.finalsbottomurl}} <a href="{{cells.finalsbottomurl}}" target="_top">{{cells.finalsbottomschool}}</a> {{else}} {{cells.finalsbottomschool}} {{/if}} <span class="score">{{cells.finalsbottomscore}}</span></li>
+                <li class="spacer">&nbsp;</li>
             </script>
         </ul>
         <ul id="bracket-5" class="round round-5">
-        <li class="round-info">&nbsp;</li>
-        <script id="bracket-template5" type="text/x-handlebars-template">
-            <li class="game game-top">{{cells.winner}}<span></span></li>
+            <li class="round-info">&nbsp;</li>
+            <script id="bracket-template5" type="text/x-handlebars-template">
+                <li class="game game-top">{{cells.champion}}<span></span></li>
             </script>
         </ul>
     </main>
 </body>
+
 </html>
