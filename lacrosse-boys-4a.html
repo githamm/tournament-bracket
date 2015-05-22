@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Boys 5A Lacrosse Tournament Bracket</title>
+    <title>Boys 4A Lacrosse Tournament Bracket</title>
     <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
     <link rel="stylesheet" type="text/css" href="sports-bracket.css">
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
@@ -12,7 +12,7 @@
         $(window).load(function() {
 
             // Define spreadsheet URL
-            var mySpreadsheet1 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=0';
+            var mySpreadsheet1 = 'https://docs.google.com/spreadsheets/d/1xpa7yDWhgQpFnAanGufLFfzedgnLGXEiBcSzterS6MA/edit#gid=0';
 
             // Compile the Handlebars template
             var BracketTemplate1 = Handlebars.compile($('#bracket-template1').html());
@@ -24,7 +24,7 @@
                 rowTemplate: BracketTemplate1
             });
 
-            var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=894748319';
+            var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/1xpa7yDWhgQpFnAanGufLFfzedgnLGXEiBcSzterS6MA/edit#gid=894748319';
 
             var BracketTemplate2 = Handlebars.compile($('#bracket-template2').html());
 
@@ -34,7 +34,7 @@
                 rowTemplate: BracketTemplate2
             });
 
-            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=641489088';
+            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/1xpa7yDWhgQpFnAanGufLFfzedgnLGXEiBcSzterS6MA/edit#gid=641489088';
 
             var BracketTemplate3 = Handlebars.compile($('#bracket-template3').html());
 
@@ -44,7 +44,7 @@
                 rowTemplate: BracketTemplate3
             });
 
-            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=1685345994';
+            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/1xpa7yDWhgQpFnAanGufLFfzedgnLGXEiBcSzterS6MA/edit#gid=1685345994';
 
             var BracketTemplate4 = Handlebars.compile($('#bracket-template4').html());
 
@@ -54,7 +54,7 @@
                 rowTemplate: BracketTemplate4
             });
 
-            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=1818032978';
+            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/1xpa7yDWhgQpFnAanGufLFfzedgnLGXEiBcSzterS6MA/edit#gid=1818032978';
 
             var BracketTemplate5 = Handlebars.compile($('#bracket-template5').html());
 
@@ -82,7 +82,7 @@
         </ul>
         <ul id="bracket-2" class="round round-2">
             <li class="round-info">Quarterfinals
-                <br>May 9</li>
+                <br>May 8</li>
             <script id="bracket-template2" type="text/x-handlebars-template">
                 <li class="spacer">&nbsp;</li>
                 <li class="game game-top"><span class="seed">{{cells.quarterstopseed}}</span>&nbsp;{{#if cells.quarterstopurl}} <a href="{{cells.quarterstopurl}}" target="_top">{{cells.quarterstopschool}}</a> {{else}} {{cells.quarterstopschool}} {{/if}} <span class="score">{{cells.quarterstopscore}}</span></li>

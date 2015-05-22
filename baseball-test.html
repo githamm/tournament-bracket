@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Boys 5A Lacrosse Tournament Bracket</title>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.js'></script>
+    <link rel="stylesheet" type="text/css" href="sports-bracket.css">
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
+    <script type='text/javascript' src="https://chriszarate.github.io/sheetrock/dist/sheetrock.min.js"></script>
+    <script type='text/javascript'>
+        $(window).load(function() {
+
+            // Define spreadsheet URL
+            var mySpreadsheet1 = 'https://docs.google.com/spreadsheets/d/11nHLSxoXh_0PXDdqr7_hY1NmlqqnRNBcwTLtj5KQMxA/edit#gid=0';
+
+            // Compile the Handlebars template
+            var BracketTemplate1 = Handlebars.compile($('#bracket-template1').html());
+
+            // Load data
+            $('#bracket-1').sheetrock({
+                url: mySpreadsheet1,
+                query: "select A,B,C,D",
+                rowTemplate: BracketTemplate1
+            });
+
+            /* var mySpreadsheet2 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=894748319';
+
+            var BracketTemplate2 = Handlebars.compile($('#bracket-template2').html());
+
+            $('#bracket-2').sheetrock({
+                url: mySpreadsheet2,
+                query: "select A,B,C,D,E,F,G,H,I",
+                rowTemplate: BracketTemplate2
+            });
+
+            var mySpreadsheet3 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=641489088';
+
+            var BracketTemplate3 = Handlebars.compile($('#bracket-template3').html());
+
+            $('#bracket-3').sheetrock({
+                url: mySpreadsheet3,
+                query: "select A,B,C,D,E,F,G,H,I",
+                rowTemplate: BracketTemplate3
+            });
+
+            var mySpreadsheet4 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=1685345994';
+
+            var BracketTemplate4 = Handlebars.compile($('#bracket-template4').html());
+
+            $('#bracket-4').sheetrock({
+                url: mySpreadsheet4,
+                query: "select A,B,C,D,E,F,G,H,I",
+                rowTemplate: BracketTemplate4
+            });
+
+            var mySpreadsheet5 = 'https://docs.google.com/spreadsheets/d/1COfuTjN8re0e_pDCyEkR--87dzd8iCGXt3TpW-xBUrc/edit#gid=1818032978';
+
+            var BracketTemplate5 = Handlebars.compile($('#bracket-template5').html());
+
+            $('#bracket-5').sheetrock({
+                url: mySpreadsheet5,
+                query: "select A,B,C",
+                rowTemplate: BracketTemplate5
+            }); */
+        });
+    </script>
+
+    <style>
+    table tr td {
+        border: 1px solid;
+        padding: 2px;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    </style>
+</head>
+
+<body>
+    <main id="tournament">
+        <!-- <ul id="bracket-1" class="round round-1">
+            <li class="round-info">Round 1
+                <br>May 5</li>
+            <script id="bracket-template1" type="text/x-handlebars-template">
+                <li class="spacer">&nbsp;</li>
+                <li class="game game-top"><span class="seed">{{cells.round16topseed}}</span>&nbsp;{{#if cells.round16topurl}} <a href="{{cells.round16topurl}}" target="_top">{{cells.round16topschool}}</a> {{else}} {{cells.round16topschool}} {{/if}} <span class="score">{{cells.round16topscore}}</span></li>
+                <li class="game game-spacer">{{cells.round16info}}</li>
+                <li class="game game-bottom"><span class="seed">{{cells.round16bottomseed}}</span>&nbsp;{{#if cells.round16bottomurl}} <a href="{{cells.round16bottomurl}}" target="_top">{{cells.round16bottomschool}}</a> {{else}} {{cells.round16bottomschool}} {{/if}} <span class="score">{{cells.round16bottomscore}}</span></li>
+                <li class="spacer">&nbsp;</li>
+            </script>
+        </ul> -->
+        <table id="bracket-1">
+        <script id="bracket-template1" type="text/x-handlebars-template">
+            <tr>
+            <td>{{cells.round1}}</td><td>{{cells.round2}}</td><td>{{cells.round3}}</td><td>{{cells.round4}}</td>
+            </tr>
+            </script>
+        </table>
+    </main>
+</body>
+</html>
